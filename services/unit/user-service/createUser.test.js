@@ -49,7 +49,7 @@ describe('Testing Create User - UserService', () => {
         it('should throw an error when User.create fails', async () => {
 
             const mockError = UserServiceHelper.getDatabaseError();
-            const createUserMock = jest.spyOn(User, 'create').mockRejectedValue(new Error(mockError));
+            jest.spyOn(User, 'create').mockRejectedValue(new Error(mockError));
 
             userData.email= 'ValidEmail@email.com';
 

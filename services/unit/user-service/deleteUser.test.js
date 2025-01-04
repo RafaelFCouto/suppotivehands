@@ -61,7 +61,7 @@ describe('Testing Delete User - UserService', () => {
         it('should throw an error when User.destroy fails', async () => {
 
             const mockError = UserServiceHelper.getDatabaseError();
-            const deleteUserMock = jest.spyOn(User, 'destroy').mockRejectedValue(new Error(mockError));
+            jest.spyOn(User, 'destroy').mockRejectedValue(new Error(mockError));
             id = 2;
 
             await expect(

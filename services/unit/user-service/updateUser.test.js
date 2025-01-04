@@ -104,7 +104,7 @@ describe('Testing Update User - UserService', () => {
             );
 
             const mockError = UserServiceHelper.getDatabaseError();
-            const updateUserMock = jest.spyOn(User, 'update').mockRejectedValue(new Error(mockError));
+            jest.spyOn(User, 'update').mockRejectedValue(new Error(mockError));
 
             await expect(
                 UserService.updateUser(

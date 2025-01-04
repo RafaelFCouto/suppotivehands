@@ -50,7 +50,7 @@ describe('Testing Get user by Id - UserService', () => {
         it('should throw an error when User.findOne fails', async () => {
 
             const mockError = UserServiceHelper.getDatabaseError();
-            const getUserByIdMock = jest.spyOn(User, 'findOne').mockRejectedValue(new Error(mockError));
+            jest.spyOn(User, 'findOne').mockRejectedValue(new Error(mockError));
 
             await expect(
                 UserService.getUserById(
