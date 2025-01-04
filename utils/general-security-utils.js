@@ -56,7 +56,7 @@ class GeneralSecurityUtils {
 
             const verifyAsync = util.promisify(jwt.verify);
 
-            return await verifyAsync(jwtToken, SecurityConstants.SECRET_CRYPTO);
+            return await verifyAsync(jwtToken, SecurityConstants.HASH_BCRYPT);
         }
         catch (error){
             console.error(`Error Decrypting JWT Token: ${error.message}`);
