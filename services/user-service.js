@@ -133,7 +133,7 @@ class UserService{
 
             const user = await this.getUserById(id);
 
-            const checkPassword = await user.checkPassword(currentPassword);
+            const checkPassword = await bcryptjs.compareSync(currentPassword, user.password_hash);
 
             if(!checkPassword){
                 throw Error('Old password does not match!');
