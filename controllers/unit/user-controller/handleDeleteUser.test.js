@@ -10,7 +10,7 @@ const mockResponse = () => {
     return response;
 };
 
-describe('Testing  HancleDeleteUser - UserController', () => {
+describe('Testing  HandleDeleteUser - UserController', () => {
 
     let request;
     let response;
@@ -64,6 +64,5 @@ describe('Testing  HancleDeleteUser - UserController', () => {
             expect(response.status).toHaveBeenCalledWith(HttpStatusCode.INTERNAL_SERVER_ERROR);
             expect(response.json).toHaveBeenCalledWith({error: mockError});
         });
-
     });
 });
