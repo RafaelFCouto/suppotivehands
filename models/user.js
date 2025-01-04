@@ -56,9 +56,9 @@ class User extends Model {
     return attributes;
   }
 
-  async checkPassword(password) {
-    return bcryptjs.compareSync(password, this.password_hash);
-  }
+  // async checkPassword(password) {
+  //   return bcryptjs.compareSync(password, this.password_hash);
+  // }
 }
 
 module.exports = User;
