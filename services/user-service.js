@@ -89,7 +89,6 @@ class UserService{
         try{
             console.info(`Get all users`);
             const users = await User.findAll();
-            console.log('users === ', users);
             console.info(`Successfully get all users`);
             return users;
         }
