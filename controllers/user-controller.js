@@ -98,7 +98,7 @@ class UserController {
         try{
             console.info(`Handling Delete User`);
 
-            const { id } = request.body;
+            const { id } = request.query;
 
             if(!id){
                 return response.status(HttpStatusCode.BAD_REQUEST).json({error: 'Missing required fields'});

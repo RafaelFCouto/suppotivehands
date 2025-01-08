@@ -16,7 +16,7 @@ describe('Testing  HandleDeleteUser - UserController', () => {
     let response;
 
     beforeEach(async () => {
-        request = { body: { } };
+        request = { query: { } };
         response = mockResponse();
     });
 
@@ -29,7 +29,7 @@ describe('Testing  HandleDeleteUser - UserController', () => {
             const mockDeleteUser = UserControllerHelper.getMessageDeleteUser();
             jest.spyOn(UserService, 'deleteUser').mockResolvedValue(mockDeleteUser);
 
-            request = UserControllerHelper.getValidRequestBodWithId();
+            request = UserControllerHelper.getValidRequestQueryWithId();
 
             await UserController.handleDeleteUser(request, response)
 
@@ -57,7 +57,7 @@ describe('Testing  HandleDeleteUser - UserController', () => {
                 new Error(mockError)
             );
 
-            request = UserControllerHelper.getValidRequestBodWithId();
+            request = UserControllerHelper.getValidRequestQueryWithId();
 
             await UserController.handleDeleteUser(request, response);
 
