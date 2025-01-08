@@ -90,14 +90,6 @@ class UserControllerHelper {
         }
     }
 
-    getValidRequestBodWithEmail = () => {
-        return {
-            body: {
-                email: 'userCreated@example.com'
-            }
-        }
-    }
-
     getValidRequestQueryWithEmail = () => {
         return {
             query: {
@@ -106,26 +98,10 @@ class UserControllerHelper {
         }
     }
 
-    getInvalidRequestBodWithId = () => {
-        return {
-            body: {
-                id: 100,
-            }
-        }
-    }
-
     getInvalidRequestQueryWithId = () => {
         return {
             query: {
                 id: 100,
-            }
-        }
-    }
-
-    getInvalidRequestBodWithEmail = () => {
-        return {
-            body: {
-                email: 'invaliduserCreated@example.com'
             }
         }
     }
