@@ -17,7 +17,7 @@ describe('Testing  HandleGetUser- UserController', () => {
     let mockUser;
 
     beforeEach(async () => {
-        request = { body: { } };
+        request = { query: { } };
         response = mockResponse();
     });
 
@@ -30,7 +30,7 @@ describe('Testing  HandleGetUser- UserController', () => {
 
         it('Should return user by Id', async () => {
 
-            request = UserControllerHelper.getValidRequestBodWithId();
+            request = UserControllerHelper.getValidRequestQueryWithId();
 
             jest.spyOn(UserService, 'getUserById').mockResolvedValue(mockUser);
 
@@ -41,7 +41,7 @@ describe('Testing  HandleGetUser- UserController', () => {
         });
         it('Should return user by email', async () => {
 
-            request = UserControllerHelper.getValidRequestBodWithEmail();
+            request = UserControllerHelper.getValidRequestQueryWithEmail();
 
             jest.spyOn(UserService, 'getUserByEmail').mockResolvedValue(mockUser);
 
@@ -61,7 +61,7 @@ describe('Testing  HandleGetUser- UserController', () => {
             mockError = UserControllerHelper.getErrorNotExistUser();
             jest.spyOn(UserService, 'getUserById').mockResolvedValue(null);
 
-            request = UserControllerHelper.getInvalidRequestBodWithId();
+            request = UserControllerHelper.getInvalidRequestQueryWithId();
 
 
             await UserController.handleGetUser(request, response);
@@ -74,7 +74,7 @@ describe('Testing  HandleGetUser- UserController', () => {
             mockError = UserControllerHelper.getErrorNotExistUser();
             jest.spyOn(UserService, 'getUserByEmail').mockResolvedValue(null);
 
-            request = UserControllerHelper.getInvalidRequestBodWithEmail();
+            request = UserControllerHelper.getInvalidRequestQueryWithEmail();
 
 
             await UserController.handleGetUser(request, response);
@@ -98,7 +98,7 @@ describe('Testing  HandleGetUser- UserController', () => {
                 new Error(mockError)
             );
 
-            request = UserControllerHelper.getValidRequestBodWithId();
+            request = UserControllerHelper.getValidRequestQueryWithId();
 
             await UserController.handleGetUser(request, response);
 
@@ -112,7 +112,7 @@ describe('Testing  HandleGetUser- UserController', () => {
                 new Error(mockError)
             );
 
-            request = UserControllerHelper.getValidRequestBodWithEmail();
+            request = UserControllerHelper.getValidRequestQueryWithEmail();
 
             await UserController.handleGetUser(request, response);
 

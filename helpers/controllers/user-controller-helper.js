@@ -82,9 +82,25 @@ class UserControllerHelper {
         }
     }
 
+    getValidRequestQueryWithId = () => {
+        return {
+            query: {
+                id: 1,
+            }
+        }
+    }
+
     getValidRequestBodWithEmail = () => {
         return {
             body: {
+                email: 'userCreated@example.com'
+            }
+        }
+    }
+
+    getValidRequestQueryWithEmail = () => {
+        return {
+            query: {
                 email: 'userCreated@example.com'
             }
         }
@@ -98,9 +114,25 @@ class UserControllerHelper {
         }
     }
 
+    getInvalidRequestQueryWithId = () => {
+        return {
+            query: {
+                id: 100,
+            }
+        }
+    }
+
     getInvalidRequestBodWithEmail = () => {
         return {
             body: {
+                email: 'invaliduserCreated@example.com'
+            }
+        }
+    }
+
+    getInvalidRequestQueryWithEmail = () => {
+        return {
+            query: {
                 email: 'invaliduserCreated@example.com'
             }
         }
