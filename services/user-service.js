@@ -1,10 +1,10 @@
 const bcryptjs = require('bcryptjs');
-const  User = require('../models/user');
+const User = require('../models/user');
 
 class UserService{
     constructor(){}
 
-    createUser = async (name, email, password, password_hash = null) => {
+    createUser = async (name, email, password, password_hash = '') => {
         try{
             console.info(`Creating user: ${name}, ${email}`);
 
@@ -89,6 +89,7 @@ class UserService{
         try{
             console.info(`Get all users`);
             const users = await User.findAll();
+            console.log('users === ', users);
             console.info(`Successfully get all users`);
             return users;
         }
