@@ -9,7 +9,7 @@ router.post('/auth/token', AuthController.handleLogin);
 router.post('/user', UserController.handlePostUser);
 
 
-//router.use(GeneralSecurityMiddleware.authenticateRequestWithJwtToken);
+router.use(GeneralSecurityMiddleware.authenticateRequestWithJwtToken);
 
 router.get('/users', UserController.handleGetAllUser);
 router.get('/user', UserController.handleGetUser);
