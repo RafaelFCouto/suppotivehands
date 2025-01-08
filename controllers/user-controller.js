@@ -6,7 +6,7 @@ class UserController {
     handleGetUser = async (request, response) => {
         try{
             console.info(`Handling Get User`);
-            const {id, email} = request.body;
+            const {id, email} = request.query;
             let user;
 
             if(!id && !email){
