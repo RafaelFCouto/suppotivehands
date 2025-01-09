@@ -12,7 +12,7 @@ A projeto em questão é uma API que realiza o controle de usuários, permitindo
 
 1. Clone este repositório utilizando o comando:
    ```bash
-   git clone https://github.com/seu-usuario/seu-repositorio.git
+   git clone https://github.com/RafaelFCouto/suppotivehands.git
 
 
 ## Estrutura do Código:
